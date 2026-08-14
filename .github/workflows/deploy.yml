@@ -4,6 +4,9 @@ name: Deploy DNS Configuration
 on:
   workflow_dispatch:
   push:
+    paths:
+      - 'config/**'
+      - 'zones/**'
     branches:
       - main
 
