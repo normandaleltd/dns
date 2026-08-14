@@ -28,4 +28,7 @@ jobs:
         run: uv sync
 
       - name: Run octodns-sync
+        env:
+          MYTHICBEASTS_API_KEY: ${{ secrets.MYTHICBEASTS_API_KEY }}
+          MYTHICBEASTS_API_SECRET: ${{ secrets.MYTHICBEASTS_API_SECRET }}
         run: uv run octodns-sync --config-file config/config.yaml --force
