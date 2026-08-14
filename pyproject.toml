@@ -1,0 +1,19 @@
+[project]
+name = "normandale-dns"
+version = "0.1.0"
+description = "Manage DNS Records for Normandale Domains"
+readme = "README.md"
+authors = [
+    { name = "Ashley Tayles", email = "ashley@tayles.uk" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "octodns>=1.21.1",
+    "octodns-mythicbeasts>=3.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "yamllint>=1.38.0",
+    "pre-commit>=4.6.1",
+]

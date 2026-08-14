@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://octodns.readthedocs.io/en/stable/_static/octodns-config.schema.json
+---
+providers:
+  github:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./zones
+    default_ttl: 3600
+    enforce_order: true
+    escaped_semicolons: false
+  mythicbeasts:
+    class: octodns_mythicbeasts.MythicBeastsProvider
+    api_key: env/MYTHICBEASTS_API_KEY
+    api_secret: env/MYTHICBEASTS_API_SECRET
+
+manager:
+  max_workers: 1
+  include_meta: true
+  validators:
+    enabled:
+      - strict
+      - best-practice
+
+zones:
+  '*':
+    sources:
+      - github
+    targets:
+      - mythicbeasts

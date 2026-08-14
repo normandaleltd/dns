@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=https://octodns.readthedocs.io/en/stable/_static/octodns-zone.schema.json
+---
+"":
+  - ttl: 3600
+    type: NS
+    values:
+      - ns1.mythic-beasts.com.
+      - ns2.mythic-beasts.com.
+      - ns3.mythic-beasts.com.
+
+  # The following A and AAAA records are for GitHub Pages
+  # yamllint disable-line rule:line-length
+  # See: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+
+  - ttl: 3600
+    type: A
+    values:
+      - 185.199.108.153
+      - 185.199.109.153
+      - 185.199.110.153
+      - 185.199.111.153
+  - ttl: 3600
+    type: AAAA
+    values:
+      - 2606:50c0:8000::153
+      - 2606:50c0:8001::153
+      - 2606:50c0:8002::153
+      - 2606:50c0:8003::153
+
+  # The following MX records are for Google Workspace
+
+  - ttl: 600
+    type: MX
+    values:
+      - exchange: aspmx.l.google.com.
+        preference: 1
+      - exchange: alt1.aspmx.l.google.com.
+        preference: 5
+      - exchange: alt2.aspmx.l.google.com.
+        preference: 5
+      - exchange: alt3.aspmx.l.google.com.
+        preference: 10
+      - exchange: alt4.aspmx.l.google.com.
+        preference: 10
+
+  - ttl: 3600
+    type: TXT
+    values:
+      - v=spf1 include:_spf.google.com ~all
+
+  - ttl: 3600
+    type: CAA
+    values:
+      - flags: 0
+        tag: issue
+        value: "letsencrypt.org"
+      - flags: 0
+        tag: issuewild
+        value: "letsencrypt.org"
+
+_dmarc:
+  ttl: 3600
+  type: TXT
+  values:
+    - v=DMARC1; p=none; rua=mailto:admin@normandaleproducts.com
+
+_github-pages-challenge-normandaleltd:
+  ttl: 3600
+  type: TXT
+  value: e1fa3cb6a69ad20b86f67550924886
+
+_mythic-beasts-challenge:
+  ttl: 3600
+  type: TXT
+  value: Vnef3u2V0T6SqnAU7VXP06kziHJULs6MSnJF/6tVC8I
+
+www:
+  ttl: 3600
+  type: CNAME
+  value: normandaleproducts.com.

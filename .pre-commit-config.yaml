@@ -1,0 +1,20 @@
+---
+repos:
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args: ["-c", ".yamllint"]
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.37.4
+    hooks:
+      - id: check-jsonschema
+        name: check octodns config schema
+        files: ^config\.yaml$
+        args:
+          ["--schemafile", "https://octodns.readthedocs.io/en/stable/_static/octodns-config.schema.json"]
+      - id: check-jsonschema
+        name: check octodns zone schema
+        files: ^zones/.*\.ya?ml$
+        args:
+          ["--schemafile", "https://octodns.readthedocs.io/en/stable/_static/octodns-zone.schema.json"]
