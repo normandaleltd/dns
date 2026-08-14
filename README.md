@@ -18,9 +18,6 @@ https://docs.astral.sh/uv/getting-started/installation/
 
 Once installed, simply running ```uv sync``` from a cloned/forked copy of this repository will set up everything needed for development.
 
-> [!NOTE]
-> For making simple DNS changes, setting up Python/UV is not needed, but it might make the pre-commit checking easier. Else, the pre-commit checks will be ran in Github during the pull request process.
-
 ## Making Changes
 
 1. Fork this repository using the 'Fork' button in the top right of the Github UI.
