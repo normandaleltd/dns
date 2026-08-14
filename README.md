@@ -29,13 +29,14 @@ Once installed, simply running ```uv sync``` from a cloned/forked copy of this r
 3. Make your changes, and commit them to your fork.
 4. Open a pull request on the upstream repository (https://github.com/normandaleltd/dns)
 5. Ensure make sure all the CI/CD checks pass.
-   > [!NOTE]
-   > You may need to wait for a repository admin to approve the CI/CD workflow runs.
 
-   > [!TIP]
-   > You can run the linting checks locally using UV.
-   >```bash
-   >  uvx pre-commit run --all-files
-   >```
+> [!NOTE]
+> You may need to wait for a repository admin to approve the CI/CD workflow runs.
+
+> [!TIP]
+> You can run the linting checks locally using UV.
+>```bash
+>  uvx pre-commit run --all-files
+>```
 
 6. Your change will be reviewed by an admin and the change will be pushed by a workflow once the Pull Request has been merged.
