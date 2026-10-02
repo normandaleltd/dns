@@ -6,7 +6,7 @@ repos:
       - id: yamllint
         args: ["-c", ".yamllint"]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.38.0
+    rev: 0.38.2
     hooks:
       - id: check-jsonschema
         name: check octodns config schema
